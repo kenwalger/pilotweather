@@ -1,7 +1,8 @@
 pilotweather
 ============
 
-Node.js app to check the current status of US airports and their associated weather conditions.
+Node.js app to gets the airport status for any major airport, including known delays and 
+weather data from NOAA..
 
 The JSON data comes from http://weather.gov and the NOAA's National Weather Service via the FAA's 
 API (instructions for the API http://services.faa.gov/).
