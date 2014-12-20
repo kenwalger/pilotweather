@@ -6,13 +6,18 @@ var http = require("http");
 
 
 //Print out message
-function printMessage(airport, name, delay, updated, weather, visibility) {
+function printMessage(airport, name, delay, updated, weather, temp, wind, visibility, delayReason, delayTime) {
 
-  if(!delay) {
-    var message = "As of " + updated + ", " + name + " (" + airport.toUpperCase() + ") is currently delayed with " + weather + " conditions and " + visibility + " miles of visibility";
+  if(delay == "true") {
+        var message = "\n \nAs of " + updated + ", " + name + " (" + airport.toUpperCase() + ") is currently delayed due to " + delayReason +". \n" +
+        "The average delay time is " + delayTime + ". \n" +
+        "There are " + weather + " conditions and " + visibility + " miles of visibility. \n" +
+        "The temperature is " + temp + " with wind from the " + wind +".\n \n";
     console.log(message);
     } else {
-    var message = "As of " + updated + ", " + name + " (" + airport.toUpperCase() + ") is not currently delayed with " + weather + " conditions and " + visibility + " miles of visibility";
+    var message = "\n \nAs of " + updated + ", " + name + " (" + airport.toUpperCase() + ") is not currently delayed. \n" +
+        "There are " + weather + " conditions and " + visibility + " miles of visibility. \n" +
+        "The temperature is " + temp + " with wind from the " + wind +".\n \n";
     console.log(message);
   }
 }
@@ -44,7 +49,11 @@ function get(airport){
             airportInfo.delay, 
             airportInfo.weather.meta.updated,
             airportInfo.weather.weather,
-            airportInfo.weather.visibility);
+            airportInfo.weather.temp,
+            airportInfo.weather.wind,
+            airportInfo.weather.visibility,
+            airportInfo.status.reason,
+            airportInfo.status.avgDelay);
         } catch(error) {
           //Parse Error
           printError(error);
