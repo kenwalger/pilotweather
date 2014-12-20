@@ -26,7 +26,7 @@ function printError(error) {
 function get(airport){
   //Connect to the API URL (http://services.faa.gov/airport/status/airport?format=JSON)
   // AIRPORT is the three character identifier for airports in the USA (IATA code)
-  var request = http.get("http://services.faa.gov/airport/status/" + airport +"?format=JSON", function(response){
+  var request = http.get("https://services.faa.gov/airport/status/" + airport +"?format=JSON", function(response){
     var body = "";
   //Read the data
     response.on('data', function (chunk) {
