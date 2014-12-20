@@ -1,9 +1,7 @@
-//Problem: We need a simple way to look at a user's badge count and JavaScript points
-//Solution: Use Node.js to connect to Treehouse's API to get profile information to print out
+//Problem: We need a simple way to look at weather and delay information for a specific airport
+//Solution: Use Node.js to connect to the FAA's API to get weather information to print out
 
 var http = require("http");
-
-
 
 //Print out message
 function printMessage(airport, name, delay, updated, weather, temp, wind, visibility, delayReason, delayTime) {
@@ -21,22 +19,19 @@ function printMessage(airport, name, delay, updated, weather, temp, wind, visibi
     console.log(message);
   }
 }
-
 // Print out error messages
 function printError(error) {
   console.error(error.message);
 }
-
 function get(airport){
   //Connect to the API URL (http://services.faa.gov/airport/status/airport?format=JSON)
-  // AIRPORT is the three character identifier for airports in the USA
+  // AIRPORT is the three character identifier for airports in the USA (IATA code)
   var request = http.get("http://services.faa.gov/airport/status/" + airport +"?format=JSON", function(response){
     var body = "";
   //Read the data
     response.on('data', function (chunk) {
       body += chunk;    
-    });
-  
+    });  
     response.on('end', function (){
       if(response.statusCode === 200) {
         try {          
@@ -63,13 +58,8 @@ function get(airport){
         printError({message: "There was an error getting the information for " + airport +". (" + http.STATUS_CODES [response.statusCode] +")"});
       }
     });
-
-
-   
   });
-  
   //Connection Error
   request.on("error", printError);
 }
-
 module.exports.get = get;
