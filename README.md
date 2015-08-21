@@ -1,5 +1,4 @@
 #pilotweather
-============
 
 Node.js app to get the airport status for any major airport, including known delays and 
 weather data from NOAA..
