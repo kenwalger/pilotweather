@@ -1,6 +1,7 @@
 {
   "name": "pilotweather",
-  "version": "0.1.4",
+  "version": "0.1.5",
+  "bin" : "./app.js" ,
   "description": "Node.js app to get the airport status for any major airport, including known delays and weather data from NOAA.",
   "main": "app.js",
   "scripts": {
@@ -17,8 +18,9 @@
     "NOAA",
     "JSON"
   ],
-  "bin" : { "pilotweather" : "app.js" },
   "author": "Ken W. Alger",
+  "email" : "kenalger@comcast.net",
+  "url" : "http://www.kenwalger.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kenwalger/pilotweather/issues"
