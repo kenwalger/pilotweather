@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 var weather = require("./weather.js");
-var users = process.argv.slice(2);
+var airports = process.argv.slice(2);
 
-users.forEach(weather.get);
+airports.forEach(weather.get);
