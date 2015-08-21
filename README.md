@@ -9,7 +9,7 @@ API (instructions for the API http://services.faa.gov/).
 
 ###Installation
 
-
+`npm install pilotweather`
 
 ###Useage
 
@@ -22,3 +22,10 @@ From a command prompt, run the app using
 To check the status of Portland International Airport in Portland, Oregon (PDX) you would use:
 
 `node app pdx`
+
+
+###Example of Returned Data
+
+As of 6:53 PM Local, Portland International (PDX) is not currently delayed.
+There are Fair conditions and 10 miles of visibility.
+The temperature is 73.0 F (22.8 C) with wind from the North at 12.7mph.
