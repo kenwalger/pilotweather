@@ -1,8 +1,8 @@
 {
   "name": "pilotweather",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "bin" : "./app.js" ,
-  "description": "Node.js app to get the airport status for any major airport, including known delays and weather data from NOAA.",
+  "description": "Node.js app to get the airport status for any major U.S. airport, including known delays and weather data from NOAA.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

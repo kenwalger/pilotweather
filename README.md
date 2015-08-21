@@ -1,6 +1,6 @@
 #pilotweather
 
-Node.js app to get the airport status for any major airport, including known delays and 
+Node.js app to get the airport status for any major U.S. airport, including known delays and 
 weather data from NOAA..
 
 The JSON data comes from http://weather.gov and the NOAA's National Weather Service via the FAA's 
