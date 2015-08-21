@@ -7,13 +7,15 @@ var http = require("http");
 function printMessage(airport, name, delay, updated, weather, temp, wind, visibility, delayReason, delayTime) {
 
   if(delay == "true") {
-        var message = "\n \nAs of " + updated + ", " + name + " (" + airport.toUpperCase() + ") is currently delayed due to " + delayReason +". \n" +
+        var message = "\n \nAs of " + updated + ", " + name + " (" + airport.toUpperCase()
+        + ") is currently delayed due to " + delayReason +". \n" +
         "The average delay time is " + delayTime + ". \n" +
         "There are " + weather + " conditions and " + visibility + " miles of visibility. \n" +
         "The temperature is " + temp + " with wind from the " + wind +".\n \n";
     console.log(message);
     } else {
-    var message = "\n \nAs of " + updated + ", " + name + " (" + airport.toUpperCase() + ") is not currently delayed. \n" +
+    var message = "\n \nAs of " + updated + ", " + name + " (" + airport.toUpperCase()
+        + ") is not currently delayed. \n" +
         "There are " + weather + " conditions and " + visibility + " miles of visibility. \n" +
         "The temperature is " + temp + " with wind from the " + wind +".\n \n";
     console.log(message);
@@ -26,7 +28,7 @@ function printError(error) {
 function get(airport){
   //Connect to the API URL (http://services.faa.gov/airport/status/airport?format=JSON)
   // AIRPORT is the three character identifier for airports in the USA (IATA code)
-  var request = http.get("https://services.faa.gov/airport/status/" + airport +"?format=JSON", function(response){
+  var request = http.get("http://services.faa.gov/airport/status/" + airport +"?format=JSON", function(response){
     var body = "";
   //Read the data
     response.on('data', function (chunk) {
@@ -55,7 +57,8 @@ function get(airport){
         }
       } else {
         //Status Code Error
-        printError({message: "There was an error getting the information for " + airport +". (" + http.STATUS_CODES [response.statusCode] +")"});
+        printError({message: "There was an error getting the information for " + airport +". ("
+          + http.STATUS_CODES [response.statusCode] +")"});
       }
     });
   });
