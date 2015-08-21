@@ -18,6 +18,7 @@
     "NOAA",
     "JSON"
   ],
+  "scripts" : { "bin_test" : "pilotweather PDX" },
   "author": "Ken W. Alger",
   "email" : "kenalger@comcast.net",
   "url" : "http://www.kenwalger.com",
