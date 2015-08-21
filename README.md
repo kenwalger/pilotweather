@@ -1,4 +1,8 @@
-pilotweather
+#pilotweather
+
+[![Dependency Status](https://david-dm.org/kenwalger/pilotweather.svg)](https://david-dm.org/kenwalger/pilotweather)
+[![devDependency Status](https://david-dm.org/kenwalger/pilotweather/dev-status.svg)](https://david-dm.org/kenwalger/pilotweather#info=devDependencies)
+
 ============
 
 Node.js app to get the airport status for any major airport, including known delays and 
